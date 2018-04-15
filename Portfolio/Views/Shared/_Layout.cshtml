@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="page-header">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("Home", "Home", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("About", "About", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("Resume", "Resume", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("Projects", "Projects", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("HackerRank", "Arrays_DS", "Solutions")
+            </div>
+            <div class="col-md-2">
+                Welcome To My Place
+            </div>
+            <div class="col-md-2">
+            </div>
+    </div>
+            
+    <div class="container">
+        @RenderBody();
+    </div>
+    <div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-1">
+            <a href="www.facebook.com/roshanjha">
+                <img src="~/Images/facebook.png"/>
+            </a>
+        </div>
+        <div class="col-md-1">
+            <a href="www.facebook.com/roshanjha">
+                <img src="~/Images/facebook.png" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <a href="www.facebook.com/roshanjha">
+                <img src="~/Images/facebook.png" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <a href="www.facebook.com/roshanjha">
+                <img src="~/Images/facebook.png" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <a href="www.facebook.com/roshanjha">
+                <img src="~/Images/facebook.png" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <a href="www.facebook.com/roshanjha">
+                <img src="~/Images/facebook.png" />
+            </a>
+        </div>
+    <div class="col-md-12">
+    </div>
+    </div>
+    <div class="panel-footer">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            © Copyright 2017 Roshan Jha. Designed by Roshan Jha.
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</body>
+</html>

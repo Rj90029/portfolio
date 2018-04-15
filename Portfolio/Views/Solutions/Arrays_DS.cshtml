@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SolutionsLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Arrays-DS</title>
+</head>
+<body>
+    <div class="row">
+        <p>
+            An array is a type of data structure that stores elements of the same type in a contiguous <br />
+            block of memory.<br />
+        </p>
+        <p>
+            In an array, A, of size N, each memory location has some unique index,  (where ), that can <br />
+            be referenced as  (you may also see it written as ).<br />
+        </p>
+        <p>
+            Given an array, A, of N integers, print each element in reverse order as a single line of <br />
+            space-separated integers.<br />
+        </p>
+        <p>
+            Input Format
+        </p>
+        <p>
+            The first line contains an integer N,  (the number of integers in A).
+        </p>
+        <p>
+            The second line contains N space-separated integers describing A.
+        </p>
+        <p>
+            Constraints<br />
+            <b>1<=N<=10^3</b><br />
+            <b>1<=A[i]<=10^4, Where A[i] is ith integer in A.</b><br />
+        </p>
+        <p>
+            <b>Output Format</b><br />
+            Print all  integers in  in reverse order as a single line of space-separated integers.<br />
+        </p>
+        <p>
+            <b>
+                Sample Input<br />
+                4<br />
+                1 4 3 2<br />
+                Sample Output<br />
+                2 3 4 1<br />
+            </b>
+        </p>
+    </div>
+    <div class="row">
+        <p>Solution Goes Here</p>
+    </div>
+    <div class="row">
+    <pre class="col-md-10">
+        <code>
+            using System;
+            using System.Collections.Generic;
+            using System.IO;
+            using System.Linq;
+            class Solution {
+
+                static void Main(String[] args) {
+                int n = Convert.ToInt32(Console.ReadLine());
+                string[] arr_temp = Console.ReadLine().Split(' ');
+                int[] arr = Array.ConvertAll(arr_temp,Int32.Parse);
+                //This is an inbuilt function.
+                //One can iterate through the array in reverse as well.
+                //Time complexity in both cases is <em><b>O(N)</b></em>
+                //N is size of array.
+                Array.Reverse(arr);
+                Console.Write(string.Join(" ",arr));
+
+
+                }
+            }
+        </code>
+    </pre>
+    </div>
+</body>
+</html>

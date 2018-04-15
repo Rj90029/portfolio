@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("Home", "Home", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("About", "About", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("Resume", "Resume", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("Projects", "Projects", "Home")
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("HackerRank", "HackerRank", "Solutions")
+            </div>
+            <div class="col-md-2">
+                Welcome To My Place
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class="col-md-6">
+                    <img src="~/Images/nerd.png" />
+                </div>
+                <div class="col-md-4">
+                    JUST AS<br />U WANT
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="color:chartreuse">
+                    <h2>HackerRank Solutions</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Data Structure",
+                        Value = "0"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Algorithms",
+                        Value = "1"
+                    });
+                }
+                @Html.DropDownList(listItems.ToString(), listItems, "--Select Subject--")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <span>
+                        <h4><b>Data Structures</b></h4>
+                    </span>
+                </div>
+                <div class="row" ><h4>@Html.ActionLink("Arrays-DS", "Arrays_DS", "Solutions")</h4></div>
+                <div class="row"><h4>@Html.ActionLink("2D Arrays-DS", "TwoDArrays_DS", "Solutions")</h4></div>
+                <div class="row"><h4>@Html.ActionLink("Dynamic Array", "Dynamic_Array", "Solutions")</h4></div>
+                <div class="row"><h4>@Html.ActionLink("Left Rotation", "Left_Rotation", "Solutions")</h4></div>
+            </div>
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-6">
+                © Copyright 2017 Roshan Jha. Designed by Roshan Jha.
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

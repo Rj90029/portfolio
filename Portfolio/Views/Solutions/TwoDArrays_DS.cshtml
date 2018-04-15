@@ -1,0 +1,147 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SolutionsLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TwoDArrays_DS</title>
+</head>
+<body>
+    <div class="row">
+        <p>
+            <b>Context</b>
+            <p>Given 6X6 2D Array, A</p>
+            <pre>
+                1 1 1 0 0 0
+                0 1 0 0 0 0
+                1 1 1 0 0 0
+                0 0 0 0 0 0
+                0 0 0 0 0 0
+                0 0 0 0 0 0
+            </pre>
+        <p>
+            We define an hourglass in A to be a subset of values with indices falling in <br />
+            this pattern in A's graphical representation:
+        </P>
+        <pre>
+                a b c
+                  d
+                e f g
+        </pre>
+        <p>
+            There are 16 hourglasses in A, and an hourglass sum is the sum of an hourglass' values.
+        </p>
+        <p>
+            Task
+            Calculate the hourglass sum for every hourglass in , then print the maximum hourglass sum.<br />
+
+            Note: If you have already solved the Java domain's Java 2D Array challenge, you may wish to <br />
+            skip this challenge.<br />
+
+            Input Format<br />
+            There are  6 lines of input, where each line contains 6 space-separated integers describing 2D Array A<br />
+            every value in A will be in the inclusive range of -9 to 9.<br />
+        </p>
+        <pre>
+            <b>
+                Constraints:<br />
+                -9<=A[i][j]<=9<br />
+                0<=i,j<=5
+            </b>
+        </pre>
+        <p>
+            <b>Output Format</b><br />
+
+            Print the largest (maximum) hourglass sum found in .<br />
+
+            <b>Sample Input</b>
+        </p>
+        <pre>
+            1 1 1 0 0 0
+            0 1 0 0 0 0
+            1 1 1 0 0 0
+            0 0 2 4 4 0
+            0 0 0 2 0 0
+            0 0 1 2 4 0
+        </pre>
+        <p>
+            <b>Sample Output</b>
+        </p>
+        <pre>
+                        19
+        </pre>
+        <p>
+            <b>Explanation</b>
+        </p>
+        <p>
+            A contains the following hourglasses:
+        </p>
+        <pre>
+            1 1 1   1 1 0   1 0 0   0 0 0
+              1       0       0       0
+            1 1 1   1 1 0   1 0 0   0 0 0
+
+            0 1 0   1 0 0   0 0 0   0 0 0
+              1       1       0       0
+            0 0 2   0 2 4   2 4 4   4 4 0
+
+            1 1 1   1 1 0   1 0 0   0 0 0
+              0       2       4       4
+            0 0 0   0 0 2   0 2 0   2 0 0
+
+            0 0 2   0 2 4   2 4 4   4 4 0
+              0       0       2       0
+            0 0 1   0 1 2   1 2 4   2 4 0
+        </pre>
+        <p>
+            The hourglass with the maximum sum (19) is:
+        </p>
+        <pre>
+            2 4 4
+              2
+            1 2 4
+        </pre>
+    </div>
+    <div class="row">
+        <b>Solution Goes Here:</b>
+    </div>
+    <div class="row">
+        <pre>
+                using System;
+                using System.Collections.Generic;
+                using System.IO;
+                using System.Linq;
+                class Solution {
+
+                    static void Main(String[] args) {
+                        int[][] arr = new int[6][];
+                        for(int arr_i = 0; arr_i < 6; arr_i++){
+                           string[] arr_temp = Console.ReadLine().Split(' ');
+                           arr[arr_i] = Array.ConvertAll(arr_temp,Int32.Parse);
+                        }
+        
+                        int max = -100500;
+                        int temp=0;
+        
+                        for(int i=1;i<=4;++i)
+                        {
+                            for(int j=1;j<=4;++j)
+                            {
+                                temp= arr[i-1][j-1]+arr[i-1][j]+arr[i-1][j+1]+
+                                                    +arr[i][j]+
+                                    arr[i+1][j-1]+arr[i+1][j]+arr[i+1][j+1];
+                                max = Math.Max(max,temp);
+                            }
+                        }
+                        Console.Write(max);
+        
+                    }
+                }
+        </pre>
+    </div>
+</body>
+</html>

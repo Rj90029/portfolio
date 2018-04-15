@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Dynamic_Array";
+    Layout = "~/Views/Shared/_SolutionsLayout.cshtml";
+}
+<div class="row">
+    Create a list,seqList , of N empty sequences, where each sequence is indexed from 0 to<br />
+    N-1. The elements within each of the N sequences also use 0-indexing.<br />
+    <p>
+        Create an integer,<em>lastAnswer</em> , and initialize it to <b>0</b>.
+    </p>
+    <p>
+        The 2 types of queries that can be performed on your list of sequences (<em>seqList</em>) are<br />
+        described below:
+    </p>
+    <code>Query:1 X y</code>
+    <ol>
+        <li>
+            1. Find the sequence, <em>seq</em> at index <em>((x &oplus;lastAnswer)%N)</em> in <em>seqList</em> .
+        </li>
+        <li>
+            Append integer <em>y</em> to sequence <em>seq</em>.
+        </li>
+    </ol>
+    <code>Query:2 X y</code>
+    <ol>
+        <li>
+            1. Find the sequence,<em>seq</em> , at index <em>((x &oplus; )%N)</em> in<em>seqList</em> .
+        </li>
+        <li>
+            2. Find the value of element<em>y%size</em>  in <em>seq</em> (where <em>size</em> is the size of <em>seq</em>) and assign it<br />
+            to <em>lastAnswer</em> .
+        </li>
+        <li>
+            3. Print the new value of   <em>lastAnswer</em>  on a new line
+        </li>
+    </ol>
+    <div class="row">
+        <b>Task</b>
+        Given N,Q and Q queries, execute each query.<br />
+        <b>Note:</b>&oplus; is the bitwise XOR operation, which corresponds to the ^ operator in most languages. <br />
+        <b>Input Format</b>
+        <p>
+            The first line contains two space-separated integers, N (the number of sequences) and  Q(the<br />
+            number of queries), respectively.<br />
+            Each of the <b>Q</b> subsequent lines contains a query in the format defined above.
+        </p>
+        <b>Constraints</b>
+        <ol>
+            <li>
+                <b>1<=N,Q<=10^5</b>
+            </li>
+            <li>
+                <b>
+                    0<=x<=10^9
+                </b>
+            </li>
+            <li>
+                <b>
+                    0<=y<=10^9
+                </b>
+            </li>
+            <li>
+                It is guaranteed that query type 2 will never query an empty sequence or index.
+            </li>
+        </ol>
+    </div>
+    <div>
+        <p><b>Output Format</b></p>
+        <p>For each type 2 query, print the updated value of  on a new line.</p>
+    </div>
+    <div class="row">
+        <p><b>Sample Input</b></p>
+        <pre>
+            2 5
+            1 0 5
+            1 1 7
+            1 0 3
+            2 1 0
+            2 1 1
+        </pre>
+        <p><b>Sample Output</b></p>
+        <pre>
+            7
+            3
+        </pre>
+    </div>
+    <div class="row">
+        <p><b>Explanation</b></p>
+        <p>
+            Initial Values:<br />
+            N = 2<br />
+            <em>lastAnswer = 0</em><br />
+            <em>S0 = []</em><br />
+            <em>S1 = []</em><br />
+        </p>
+        <p>Query 0: Append 5 to sequence <em>((0 &oplus; 0)%2) = 0</em>. </p>
+        <em>lastAnswer = 0</em><br />
+        <em>S0 = [5]</em><br />
+        <em>S1 = []</em><br />
+        <p>Query 1: Append 7 to sequence <em>((1 &oplus; 0)%2) = 1</em></p>
+        <em>S0 = [5]</em><br />
+        <em>S1 = [7]</em><br />
+        <p>Query 2: Append 3 to sequence <em>((0 &oplus; 0)%2) = 0</em></p>
+        <em>lastAnswer = 0</em><br />
+        <em>S0 = [5]</em><br />
+        <em>S1 = [7]</em><br />
+        <p>Query 3: Assign the value at index <b>0</b> of sequence <em>((1 &oplus; 0)%2) = 1</em> to <em>lastAnswer,</em> print<br />
+        <em>lastAnswer</em></p>
+        <em>lastAnswer = 7</em><br />
+        <em>S0 = [5,3]</em><br />
+        <em>S1 = [7]</em><br />
+        <pre>7</pre>
+        <p>
+            Query 4: Assign the value at index <b>1</b> of sequence <em>((1 &oplus; 7)%2) = 0</em> to <em>lastAnswer,</em> print<br />
+            <em>lastAnswer</em>
+        </p>
+        <em>lastAnswer = 7</em><br />
+        <em>S0 = [5,3]</em><br />
+        <em>S1 = [7]</em><br />
+        <pre>3</pre>
+    </div>
+    <div class="row">
+        <b>Solution Goes Here:</b>
+         <p>
+             <pre>
+                using System;
+                using System.Collections.Generic;
+                using System.Collections;
+                using System.IO;
+                class Solution
+                {
+                    static void Main(String[] args)
+                    {
+                        string[] input = Console.ReadLine().Trim().Split(' ');
+                        int N = Convert.ToInt32(input[0]);
+                        int Q = Convert.ToInt32(input[1]);
+        
+                        List&lt;&lt;int&gt; seqN = new List&lt;&lt;int&gt;&gt;(N);
+                        for(int i=0;i&lt;N;i++)
+                        {
+                            seqN.Add(new List&lt;int&gt;());
+                        }
+                        int LastAnswer = 0;
+                        for(int i=0;i&lt;Q;i++)
+                        {
+                            string[] query = Console.ReadLine().Trim().Split(' ');
+                            int[] arr = Array.ConvertAll(query,int.Parse);
+                            int t = arr[0];
+                            int x = arr[1];
+                            int y = arr[2];
+                            int seqIndex = ((x ^ LastAnswer ) % N);
+                            List&lt;int&gt; currSeq = seqN[seqIndex];
+                            if(t==1)
+                            {
+                                currSeq.Add(y);
+                            }
+                            else
+                            {
+                                LastAnswer = currSeq[y%currSeq.Count];
+                                Console.WriteLine(LastAnswer);
+                            }
+                        }
+
+                    }
+                }
+             </pre>
+         </p>
+    </div>
+</div>
