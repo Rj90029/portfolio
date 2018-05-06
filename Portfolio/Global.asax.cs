@@ -14,7 +14,7 @@ namespace Portfolio
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            DisplayMode 
+            
         }
     }
 }

@@ -1,0 +1,130 @@
+﻿
+ .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+ body {
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+}
+  body, html {
+    height: 100%;
+    margin: 0;
+    }
+    .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+    .section {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+    .section h2.title {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 100;
+    padding: 10px 0;
+    margin-bottom: 44px;
+    text-align: center;
+    border-bottom: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+    .bg {
+    
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.text-gradient
+{
+    background-color:lightgray;
+}
+.text-services{
+    background-color:blanchedalmond;
+}
+.text-testimonial{
+    background-color:cornflowerblue;
+}
+.text-work{
+    background-color:whitesmoke;
+}
+#footer {
+    background: #222;
+    font-size: 14px;
+    line-height: 20px;
+    color:aquamarine;
+    position:sticky;
+}
+
+#footer p {
+    margin: 0;
+    text-align: right;
+    color: #eee;
+    font-family: 'Roboto Slab',serif;
+}
+    #footer p.template-bootstrapious {
+        margin-top: 20px;
+        text-align: center;
+        color: #eee;
+        font-family: 'Roboto Slab',serif;
+        font-size: 14px;
+        font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+     #footer p.social{
+         text-align:left;
+     }
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+    #footer p.social a {
+        margin-left: 10px;
+        color: #fff;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        line-height: 50px;
+        font-size: 25px;
+        vertical-align: middle;
+        text-align: center;
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+    }
+   
+    footer p {
+    margin: 0;
+    text-align: right;
+    color: #eee;
+    font-family: 'Roboto Slab',serif;
+}
+   
