@@ -1,4 +1,30 @@
 ﻿
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-contents {
+    position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+     /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
  .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -18,7 +44,7 @@
     }
     .bottom-left {
     position: absolute;
-    bottom: 8px;
+    bottom: 240px;
     left: 16px;
 }
     .section {
@@ -63,9 +89,11 @@
 .text-gradient
 {
     background-color:lightgray;
+   
 }
 .text-services{
     background-color:blanchedalmond;
+   
 }
 .text-testimonial{
     background-color:cornflowerblue;
